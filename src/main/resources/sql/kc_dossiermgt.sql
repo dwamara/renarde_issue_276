@@ -1,0 +1,188 @@
+-- Adminer 4.8.1 MySQL 8.0.40 dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+CREATE TABLE `credentials` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `user_id` bigint NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unq_user_id` (`user_id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `UK_ry431gkw9ueu8xq0yfbys0d1d` (`user_id`),
+  CONSTRAINT `credentials_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+INSERT INTO `credentials` (`id`, `user_id`, `username`, `password`) VALUES
+(19,	1,	'nzaki',	'$2a$10$vyZw/7wyxRtJL1x8Ulw0OurD96pTn7X/pudtcBNASJjysGZZE1UuG'),
+(20,	2,	'daolwin',	'$2a$10$sjTZ3xAf2ByhSZGfsbdv0eWMbmeV1sVYWi0e2iGeFiO9WV2HpJ0JW'),
+(21,	3,	'gmakumbu',	'$2a$10$s/ltolVYoYlyjL8859WixOeI4ct5KkcHri8TKET71y3URExOfrSEy'),
+(23,	5,	'amuaka',	'$2a$10$mviJei42fl3BCg2PXbkXZ.8alWQa5.y5gBhNrUBM5y82HIfeOlVlm'),
+(24,	6,	'mkhumbu',	'$2a$10$LyvSubtf9oZhwWiF1sknqO8BHINl.YKuvAoVD8ljX.wdXDlXsZvJa'),
+(25,	7,	'gmatondo',	'$2a$10$QCs1BskcWC.1oW77RRk85e0fCtdMt0Hx4EaF8E7ulUcfWhhFKAcYq'),
+(27,	9,	'gnzimbu',	'$2a$10$s9D/VoI3GVUaBuGhfhKQxO1VLty/DgWWdTltuxvwL4cugwuILK0Gy'),
+(28,	10,	'mkutalu',	'$2a$10$Or8GmQlwkseRx.c33Y096.9jkoqRW7tu.qGvUyrMk/dvDmQl7bqme'),
+(29,	11,	'mnguvulu',	'$2a$10$0iPMyWthZPIljeyCMFaGf.7SyMPOA9Te1ZK.VBg3bnHkfv68IJDmS'),
+(30,	12,	'msango',	'$2a$10$lcnlPuieZRHtl4yZE3kGjunKOfYoztqcQU4Uzs402bE0PgcFDmgeK'),
+(31,	13,	'rdiakesse',	'$2a$10$Ze2IxqaAO1linjCtA4ju1OjoFn.PJFUvdOeoJ3QS3DylqNAUPXAwW'),
+(32,	14,	'lubangamo',	'$2a$10$ZIA0YWqk4feLKIzchrOvsuDLHzQEidM6DocDi2AwuJmDgyvMkCKuG'),
+(33,	15,	'jnkiambiyavanga',	'$2a$10$2IlDYmvj1SoryYD6lM7ARutQQykpP1zzYdAmWrWnI/IEIxcS1sCxC'),
+(34,	16,	'mnginamau',	'$2a$10$3dXP..tyoWwk7hSOXtTSn.BRgvBti1mbLdFeJBvIAg4Qv.nl0CNAO'),
+(35,	17,	'dnsome',	'$2a$10$HRCPpkwRmCw6.o8w0BdOm.xRtyTuV8WQ/JqBxsA3G.v3hsX1KT9Oa'),
+(36,	18,	'bmpuanga',	'$2a$10$/piOfSx2w2l6i7.e5gBMZeyM.TO1ni.cEkYeQqS0D08WAP4D6r4kS'),
+(37,	19,	'mnsumbu',	'$2a$10$xM5otY8mp0ndg1d4dQGe4uaxD3QkI.3YuW.i7x0eslZBZYIe9JOKO'),
+(38,	20,	'yphola',	'$2a$10$vGl3ExZOvrTy2oMqRy2jju/ZAw1xeZHk3jwyFGH5E9JP5kMJq0T9K'),
+(39,	21,	'mampuya',	'$2a$10$2L3jOqr21fJlUleR5Q./BOd9Qst2x7FTLpxzFxsjbkauu.IjaPtoS'),
+(40,	22,	'cwambela',	'$2a$10$QAluB7MchmnODMNVIVP54uKc1Tz.N2Jeur4Q0Zy8EOL9EmvU2nVlu'),
+(41,	23,	'mntoto',	'$2a$10$yryQL.mjIPPwCz7hK.Hn1u1Ox/OvJGpAKWFPJUA1MBp6ggo4uVOnK'),
+(42,	24,	'jmvuata',	'$2a$10$WyhRqneZ3SsODbZ/YYSD1.aHsZp3c0NLcfRIH.ueNPuflBvyKqHLe'),
+(43,	26,	'nniaka',	'$2a$10$jLrlHD1NtZdHP28sc4P3pO02aeo3/xyyQ5cS169TqTbzmPq6OayNW'),
+(44,	27,	'yvangu',	'$2a$10$pmumdNWodKv5fxXrNCAw1.7GyiUe1kQjJg9WeYQx9AItv9nitUh3.'),
+(46,	45,	'glesa',	'$2a$10$A6Krv.vnM59GNkZQYECWtO.m6NHlxO0qAD8xTeNDqOu7ajWkzboNO'),
+(201,	251,	'emateta',	'$2a$10$VGe3qCe0OUCMf5hC2KjfDeGiaxAPgQsdK/tSKr7ZVwO1S6gZEt6UG'),
+(202,	252,	'jnsemi',	'$2a$10$iy.9Etw6ngl42KAjHAvnkOV6rjsFneF2xlQXyLFQzshYtJhzustbG'),
+(203,	253,	'mbutu',	'$2a$10$MbPrawIN900FDzuhjULhjeaWqjQRKhylEsEkE.zV9W9NGre9p8vj2'),
+(204,	254,	'vmavuanga',	'$2a$10$ygaeZmRs5TYNcgORpkf/KeX0V3YGWI89XvfaUjau9.yYJLBvSDHMG'),
+(205,	255,	'sniota',	'$2a$10$Lo8zMZg5f9nzQ2TqXo2Fb.VTarNM3NpMGEXyhasA29VvYlR/1j7da'),
+(206,	256,	'jmavinga',	'$2a$10$g4hBZ4gOezk5LiNfmoV5VOXZcUKoWblXjOcCflWqm5vWLFqzE9jze'),
+(207,	257,	'ktsinu',	'$2a$10$EyGig46q9OVICmeg93hrd.Cj2xUoKH7WoGEDUJxITWOp9PPT9Zxbi'),
+(208,	258,	'dmankiaki',	'$2a$10$TZG0GmWz5j4wTUTTkiqIbe4Kkfphrm6vRqbgInRfq.O3qHt36rCFK'),
+(209,	259,	'akhoto',	'$2a$10$c.YZylDb9bHToU8sMmNPOO9kfj1v63NFctpDaB9fUO167xEp15nCy'),
+(210,	260,	'jnzuzi',	'$2a$10$DfCc4opDaAbDaQ/EGuyu.u2ZCaFxaRnzz8OPore.mt0UM/5zHdqKi'),
+(211,	261,	'cyowalola',	'$2a$10$h7eHobTkeNT8bD92z2P.teJA3u2pevVL.49ku7jOi6bgp1JFwRLYS'),
+(212,	262,	'nnzeu',	'$2a$10$IMkMrS76e6Js.umDAw4QCOQYLSMhixViY7R3VOL1.SFqF/0ubLHWK'),
+(213,	263,	'bnikuna',	'$2a$10$iDJK5a2.2zsCncjPaur21.zDUAnFyknjfQaNlmriRDLGsaIBXyWba'),
+(214,	264,	'rsita',	'$2a$10$imiOtsIot5cbHdVjHHPE5evOT58PpJ/mn3St/FYTWnxoAJGZutHum'),
+(401,	451,	'pphongo',	'$2a$10$XC6pLlZKJYoBSv.LEhp.FOeuBLRbeRfk/H0WARccLA4keT5cFFxH6'),
+(402,	452,	'akenda',	'$2a$10$oEDBugaTKlRok4n99ulRmOZNIlmsOwELNylDE8xgN06k0v6pSoptm'),
+(403,	453,	'mmpembele',	'$2a$10$/XjhL66jNkEsLVPGHjl2Zu2lU.mKs.d5hsgOuCdc0lswsdKWDekjG'),
+(404,	454,	'mykitembidi',	'$2a$10$2rwX/VxUDO93ZswwfOxABuB.mxFN9PNSbmVPBY1YiPjvPBMhO9pp.'),
+(405,	455,	'lnlenda',	'$2a$10$.tRUcejFySN8N8ob2dpe3e8OYfEK3cro2mAmAcG5Vw.yEzSsVp8Ta'),
+(406,	456,	'dmabiala',	'$2a$10$XK7BmcfQ3Swi19iihFcwHOy8HWksOKSryvn/vZSTORioMOsECepv2'),
+(407,	457,	'mnkembi',	'$2a$10$xHuQJV7sgkxxmJgSYceyZ.HqPpR.gmMSEEV13.gJMBuo3Ov6FCg4a'),
+(408,	458,	'dnkongo',	'$2a$10$Mu5l95cS55mfndJ2ZqQJBu4hg2JVyEJCtkHHLsXeMXj44EJtld8WS'),
+(409,	459,	'mmabiala',	'$2a$10$LNdOFhH/hgVrrYnZigMWw.byM.D9vpXU2F0oB2NTiAOy1DFJX6r/2'),
+(410,	460,	'ksiasi',	'$2a$10$b1/Nt5mOmz4RqeCEPJ4bTOSNk5TQXHbMU45FV4DIJuvFiOf6NJNjW'),
+(412,	462,	'bmantumbu',	'$2a$10$9kCwQuf/SC1bYo/kJs9b4.yyusDxAz656KRHmjHsgYGpg6wnDGYnO'),
+(413,	463,	'mmbambi',	'$2a$10$zubu1ShywaQkk/dokweVAuVSn/LuUnffgXEyO.H/raexdl6aZvQBS'),
+(414,	464,	'lnsasa',	'$2a$10$QQE.rweG.PnUrTed.dzOOenJ4ANfrFI.HGt/sUU9acoS/1R4IbSYS'),
+(415,	465,	'nvita',	'$2a$10$cZBZjp4kYKjMmPTqL3ag/eN7bPDyd4AjaTVDnZn2psgyh95QbB4gi'),
+(454,	504,	'bei',	'$2a$10$34pwSJwauQYS.T9YAiuL5uHPaFnP2SQgP8S/A8SQxlylEYNwaE5DG'),
+(501,	551,	'cdionso',	'$2a$10$tDdUhqavkD21oY40OvPiV..AQQThQHUKs7EvxgSvEN8XgQaSvodze'),
+(551,	601,	'gbandu',	'$2a$10$leAH59CUbecB2YSsPhE9quZTlNiXz0vR1beZtJpJ/sVBCg1Y5A3OK'),
+(601,	651,	'test',	'$2a$10$xwX733u6CxiKWk9sI0XptORJcWuVrMFaKzCblBHWAxtXbvmKpIK92'),
+(602,	652,	'testdirca',	'$2a$10$wWE3h3ReKhUu.Ik2vQtPHeRFA6esOtbVdaDbja8mX7MSSvN6c4AXy'),
+(603,	653,	'testempl',	'$2a$10$f6UoufQMPFjSOzXkLtQDr.tNd2veiGFzUwIB8m0A02XYaswuIEsIa'),
+(604,	654,	'testcoordo',	'$2a$10$CSIsVm4gcd7IzieDXMKdb.A.q8I5Y7ygEllMeFgwbamXbuoje0Hpe'),
+(605,	655,	'testemplo',	'$2a$10$19NFjMCvqEoylUacenVl5uAWnhw1u/7wdJXS3pi/YvmzIUx4rkSgy'),
+(606,	656,	'testmsi',	'$2a$10$6VVN7H8lOk3/3HF967Ry4eu9sfWY/soWxXLWlvIMqB9lh/JxKcf5.'),
+(607,	657,	'testmso',	'$2a$10$nb4SBtCXepZLsAvbge52H.pjWt3y6185CbYgLlJCyTUR8sP1HYZhS'),
+(651,	701,	'testdircaba',	'$2a$10$ea1mX5pgXn5Y6GAZaaCatu7Et0MM8w4dEeMFo.bpbvhU6WEJcG8l2'),
+(701,	751,	'testbeiass',	'$2a$10$rUU/EHP887fGF.Osz1HGe.STY17D.ZXlg0YnIAwfR/ZLxPmKS8hxe'),
+(751,	801,	'testdircabasscoord',	'$2a$10$62PedqVFCjQYnaFQCPT74ubPCQ8mS.jqSp7KUXALKvpvg600xOfyW'),
+(801,	851,	'testgouvparsec',	'$2a$10$KobaQ71DWbrnQ2CyTMqw2uHFiOxrm5Op7MQ16xWurfuJiEEJL6EwW'),
+(802,	852,	'cgieskes',	'$2a$10$XqVaxe1JO1jntaR37vEZreQRIvNxpJe7HZhbPoSc1gQAIJJcdQSAW');
+
+CREATE TABLE `credentials_SEQ` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+INSERT INTO `credentials_SEQ` (`next_val`) VALUES
+(851);
+
+CREATE TABLE `user` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `user_type_id` bigint NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email_address` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_address` (`email_address`),
+  UNIQUE KEY `code` (`code`),
+  KEY `user_type_id` (`user_type_id`),
+  CONSTRAINT `user_ibfk_2` FOREIGN KEY (`user_type_id`) REFERENCES `user_type` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+INSERT INTO `user` (`id`, `user_type_id`, `code`, `name`, `email_address`) VALUES
+(1,	4,	'NNI',	'Nzaki Niati',	'nzaki@bei'),
+(2,	6,	'DWA',	'Daniel Wamara',	'daolwin@hotmail.com'),
+(3,	4,	'GMA',	'Guylain Makumbu  Mengi',	'gmakumbu@bei'),
+(5,	4,	'AMU',	'Aimé Muaka',	'amuaka@bei'),
+(6,	4,	'MKH',	'Mathieu KHUMBU  MVUMBI',	'mkhumbu@bei'),
+(7,	4,	'GMT',	'Grady Matondo',	'gmatondo@bei'),
+(9,	4,	'GNZ',	'Giscard NZIMBU MALANDA',	'gnzimbu@bei'),
+(10,	4,	'MKU',	'Matondo Kutalu',	'mkutalu@bei'),
+(11,	4,	'MNG',	'Matondo Nguvulu',	'mnguvulu@bei'),
+(12,	4,	'MSA',	'Martha Sango Vita',	'msango@bei'),
+(13,	4,	'RDI',	'Romain Diakiesse',	'rdiakesse@bei'),
+(14,	4,	'LUB',	'Supreme Lubangamo Nkalambote',	'lubangamo@bei'),
+(15,	4,	'JNK',	'Jimmy NKIAMBIYAVANGA MPANZU',	'jnkiambiyavanga@bei'),
+(16,	4,	'MNI',	'Mueller Nginamau',	'mnginamau@bei'),
+(17,	4,	'DNS',	'Daddy Nsome BAPUMBUDIA',	'dnsome@bei'),
+(18,	4,	'BMP',	'BITEMO MPUANGA',	'bmpuanga@bei'),
+(19,	4,	'MNS',	'Mampuya Nsumbu',	'mnsumbu@bei'),
+(20,	4,	'YPH',	'Yves Phola Muanda',	'yphola@bei'),
+(21,	4,	'MAM',	'Mampuya',	'mampuya@bei'),
+(22,	4,	'CWA',	'Cedric WAMBELA  MANGIALA',	'cwambela@bei'),
+(23,	4,	'MNT',	'Muaka Ntoto',	'mntoto@bei'),
+(24,	4,	'JMV',	'Jonas Mvuata',	'jmvuata@bei'),
+(26,	4,	'NNS',	'NSONA NIAKA Rose',	'nniaka@bei'),
+(27,	3,	'YVA',	'Yves Vangu',	'yvangu@bei'),
+(45,	4,	'GLE',	'Grace Lesa Luseku',	'glesa@bei'),
+(251,	13,	'EMK',	'Eliezer MATETA KANDA',	'emateta@dircab'),
+(252,	7,	'JNF',	'Julio NSEMI FUKIAO',	'jnsemi@dircab'),
+(253,	7,	'MBM',	'Mandela BUTU MANTUMBU',	'mbutu@dircab'),
+(254,	7,	'VMA',	'Victore Mavuanga',	'vmavuanga@dircab'),
+(255,	7,	'SNM',	'Sylvie NIOTA MBONGO',	'sniota@dircab'),
+(256,	7,	'JMK',	'Jemima MAVINGA KINKELA',	'jmavinga@dircab'),
+(257,	1,	'KTF',	'Kevine TSINU FUTI',	'ktsinu@mailservice'),
+(258,	1,	'DMK',	'Désiré MANKIAKI KADIABIOKO',	'dmankiaki@mailservice'),
+(259,	1,	'AKT',	'Angela Khoto Thinu',	'akhoto@mailservice'),
+(260,	1,	'JNB',	'Joseph NZUZI BAYUWA',	'jnzuzi@mailservice'),
+(261,	1,	'CYO',	'Celia YOWALOLA',	'cyowalola@mailservice'),
+(262,	1,	'NNM',	'Nyclette NZEU MBALA ',	'nnzeu@mailservice'),
+(263,	10,	'BND',	'Bodis NIKUNA DIAMBOKO',	'bnikuna@mailservice'),
+(264,	10,	'RSP',	'RenÃ© SITA PHANZU',	'rsita@mailservice'),
+(451,	4,	'PPH',	'Junior PHANZU PHONGO',	'pphongo@bei'),
+(452,	4,	'AKEE',	'Anani  Kenda',	'akenda@bei'),
+(453,	4,	'MMP',	'MÃ¼ller MAYETO  MPEMBELE',	'mmpembele@bei'),
+(454,	4,	'MYK',	'MBEDI YA KITEMBIDI',	'mykitembidi@bei'),
+(455,	4,	'LNL',	'Nicolas NLENDA LELO',	'lnlenda@bei'),
+(456,	4,	'DMA',	'DINTOKA  MABIALA',	'dmabiala@bei'),
+(457,	4,	'MNK',	'MAKANA  NKEMBI',	'mnkembi@bei'),
+(458,	4,	'DNK',	'DISUKA  NKONGO',	'dnkongo@bei'),
+(459,	4,	'MMAB',	'MAPANGALA  MABIALA',	'mmabiala@bei'),
+(460,	4,	'KSI',	'KHONDE  SIASI',	'ksiasi@bei'),
+(462,	4,	'BMA',	'BUTU  MANTUMBU',	'bmantumbu@bei'),
+(463,	4,	'MMB',	'MUSAKI  MBAMBI',	'mmbambi@bei'),
+(464,	4,	'LNS',	'LUZOLO  NSASA',	'lnsasa@bei'),
+(465,	4,	'NVI',	'NSIMBA  VITA',	'nvita@bei'),
+(504,	4,	'NMA',	'Wivine NDUNGIDI  MAKASI',	'bei@dircab'),
+(551,	2,	'CDI',	'Cédric Dionso Diyabanza',	'cdionso@dircab'),
+(601,	5,	'GBA',	'Guy Bandu Ndungidi',	'gbandu@gouv'),
+(651,	5,	'T_GOUV',	'Test Gouverneur',	'test@gouv'),
+(652,	2,	'T_DIRCAB',	'Test Dircab',	'testdirca@dircab'),
+(653,	7,	'T_EDIRCAB',	'Test Employee Dircab',	'testempl@dircab'),
+(654,	3,	'T_COORD',	'Test Coordon',	'testcoordo@bei'),
+(655,	4,	'T_EBEI',	'Test Employee BEI',	'testemplo@bei'),
+(656,	1,	'T_MS_IN',	'Test Service courrier Entran',	'testmsi@mailservice'),
+(657,	10,	'T_MS_OUT',	'Test Service Courrier Sortant',	'testmso@mailservice'),
+(701,	12,	'T_DIRCABA',	'Test Dircaba',	'testdircaba@dircab'),
+(751,	11,	'T_BEI_ASS',	'Test Assistant BEI',	'testbeiass@bei'),
+(752,	14,	'ANON',	'Anonymous',	'anonymous@anon.com'),
+(801,	13,	'T_DIRCAB_ASS_COORD',	'Test Assistant Coordonnateur près le Dircab',	'testdircabasscoord@dircab'),
+(851,	15,	'T_GOUV_PARSEC',	'Test Secrétaire particulier du Gouverneur',	'testgouvparsec'),
+(852,	15,	'GOUV_PARSEC',	'Catherine Gieskes',	'cgieskes');
+
+CREATE TABLE `user_SEQ` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+INSERT INTO `user_SEQ` (`next_val`) VALUES
+(901);
+
+-- 2025-05-07 17:30:05
