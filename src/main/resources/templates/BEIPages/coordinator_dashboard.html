@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+        {#include top_title /}
+    <base href="../../">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Iconic Bootstrap 4.5.0 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+        {#include dashboard_header_css /}
+</head>
+
+<body data-theme="light" class="font-nunito">
+
+<div id="wrapper" class="theme-cyan">
+        {#include topbar /}
+        {#include menu active=1 /}
+
+    <!-- mani page content body part -->
+    <div id="main-content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <h2>Tableau de bord</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/menu/display?page=dashboard"><i class="fa fa-dashboard"></i></a></li>
+                            <li class="breadcrumb-item">Bureau d'&Eacute;tudes et d'Investissement - {user.type.description}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="header"><h2>Dossiers</h2></div>
+                        <div class="body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#coordon"><i class="fa fa-home"></i> {#if dossiersBEI.size gt 0}<font color="blue">{/if}Coordonateur ({dossiersBEI.size}){#if dossiersBEI.size gt 0}</font>{/if}</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#assigned_assistant"><i class="fa fa-home"></i> {#if dossiersAssignedAss.size gt 0}<font color="blue">{/if}Assistant du Coordonateur ({dossiersAssignedAss.size}){#if dossiersAssignedAss.size gt 0}</font>{/if}</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#assigned"><i class="fa fa-home"></i> {#if dossiersAssigned.size gt 0}<font color="blue">{/if}Membres du Bureau ({dossiersAssigned.size}){#if dossiersAssigned.size gt 0}</font>{/if}</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#review"><i class="fa fa-user"></i> {#if dossiersPendingReview.size gt 0}<font color="blue">{/if}Attente de r&eacute;vision ({dossiersPendingReview.size}){#if dossiersPendingReview.size gt 0}</font>{/if}</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="coordon">
+                                    <div class="body project_report">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover js-basic-example dataTable table-custom mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Institution</th>
+                                                    <th>Correspondence</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {#for dossier in dossiersBEI}
+                                                    <tr>
+                                                    <td>{dossier.code}</td>
+                                                    <td>{dossier.companyName}</td>
+                                                    <td class="project-title">
+                                                        {#if dossier.hasDocuments}
+                                                            <i class="fa fa-paperclip"></i>
+                                                        {/if}
+                                                        <h6>{dossier.subjectDisplay}</h6>
+                                                        <small>Enregistr&eacute; {dossier.dateCreated}</small>
+                                                    </td>
+                                                    <td class="project-actions">
+                                                    <a href="/correspondences/retrieve?code={dossier.codeUrl}" class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></a>
+                                                    <a href="/correspondences/display_update?code={dossier.codeUrl}" class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i></a>
+                                                    </td>
+                                                    </tr>
+                                                {/for}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="assigned_assistant">
+                                    <div class="body project_report">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover js-basic-example dataTable table-custom mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Institution</th>
+                                                    <th>Correspondence</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {#for dossier in dossiersAssignedAss}
+                                                    <tr>
+                                                    <td>{dossier.code}</td>
+                                                    <td>{dossier.companyName}</td>
+                                                    <td class="project-title">
+                                                        {#if dossier.hasDocuments}
+                                                            <i class="fa fa-paperclip"></i>
+                                                        {/if}
+                                                        <h6>{dossier.subjectDisplay}</h6>
+                                                        <small>Enregistr&eacute; {dossier.dateCreated}</small>
+                                                    </td>
+                                                    <td class="project-actions">
+                                                    <a href="/correspondences/retrieve?code={dossier.codeUrl}" class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></a>
+                                                    <a href="/correspondences/display_update?code={dossier.codeUrl}" class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i></a>
+                                                    </td>
+                                                    </tr>
+                                                {/for}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="assigned">
+                                    <div class="body project_report">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover js-basic-example dataTable table-custom mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Institution</th>
+                                                    <th>Correspondence</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {#for dossier in dossiersAssigned}
+                                                    <tr>
+                                                    <td>{dossier.code}</td>
+                                                    <td>{dossier.companyName}</td>
+                                                    <td class="project-title">
+                                                        {#if dossier.hasDocuments}
+                                                            <i class="fa fa-paperclip"></i>
+                                                        {/if}
+                                                        <h6>{dossier.subjectDisplay}</h6>
+                                                        <small>Enregistr&eacute; {dossier.dateCreated}</small>
+                                                    </td>
+                                                    <td class="project-actions">
+                                                    <a href="/correspondences/retrieve?code={dossier.codeUrl}" class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></a>
+                                                    <a href="/correspondences/display_update?code={dossier.codeUrl}" class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i></a>
+                                                    </td>
+                                                    </tr>
+                                                {/for}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="review">
+                                    <div class="body project_report">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover js-basic-example dataTable table-custom mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Institution</th>
+                                                    <th>Correspondence</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {#for dossier in dossiersPendingReview}
+                                                    <tr>
+                                                    <td>{dossier.code}</td>
+                                                    <td>{dossier.companyName}</td>
+                                                    <td class="project-title">
+                                                        {#if dossier.hasDocuments}
+                                                            <i class="fa fa-paperclip"></i>
+                                                        {/if}
+                                                        <h6>{dossier.subjectDisplay}</h6>
+                                                        <small>Enregistr&eacute; {dossier.dateCreated}</small>
+                                                    </td>
+                                                    <td class="project-actions">
+                                                    <a href="/correspondences/retrieve?code={dossier.codeUrl}" class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></a>
+                                                    <a href="/correspondences/display_update?code={dossier.codeUrl}" class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i></a>
+                                                    </td>
+                                                    </tr>
+                                                {/for}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {#include dashboard_footer_js /}
+</body>
+</html>
